@@ -1,0 +1,23 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+plugins {
+    id 'com.android.application' version '7.3.1' apply false
+    id 'com.android.library' version '7.3.1' apply false
+    id 'org.sonarqube' version '3.5.0.2730'
+    id 'nl.neotech.plugin.rootcoverage' version '1.6.0'
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "appMob_key"
+        property "sonar.organization", "abdeldjalilbouchenafa"
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.login", "6ab7b4a5af4700d539b9cc9f1de1c7fa077d22f3"
+        property "sonar.projectVersion", "1.0"
+        property "sonar.language", "java"
+        property "sonar.sources","src/main/java"
+        property "sonar.java.coveragePlugin", "jacoco"
+        property "sonar.coverage.jacoco.xmlReportPaths", "${rootProject.projectDir}/app/build/reports/coverage/androidTest/debug/connected/report.xml"
+
+    }
+}
